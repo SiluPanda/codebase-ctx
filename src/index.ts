@@ -12,3 +12,4 @@ export { estimateTokens } from './utils/token-estimate';
 export { analyzeProject } from './analyzers/project';
 export { analyzeDependencies } from './analyzers/dependencies';
 export { DEPENDENCY_REGISTRY, categorize } from './registries/dependencies';
+export { analyzeScripts } from './analyzers/scripts';

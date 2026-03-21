@@ -51,9 +51,9 @@ This file tracks all tasks needed to implement `codebase-ctx` per the SPEC.md. T
 
 ### Script Analyzer
 
-- [ ] **Implement `src/analyzers/scripts.ts`** — Create the script analyzer that reads `package.json` `scripts` field and categorizes each script by name pattern: `build`/`compile`/`bundle`/`tsc` -> `'build'`, `test`/`test:*`/`spec`/`e2e`/`coverage` -> `'test'`, `lint`/`lint:*`/`check`/`format`/`prettier` -> `'lint'`, `start`/`dev`/`serve`/`develop` -> `'start'`, `deploy`/`release`/`publish` -> `'deploy'`, everything else -> `'other'`. Set boolean flags `hasBuild`, `hasTest`, `hasLint`, `hasStart`. | Status: not_done
-- [ ] **Implement script analyzer fallback** — When `package.json` has no `scripts` field, return empty array and all boolean flags as `false`. | Status: not_done
-- [ ] **Write `src/__tests__/analyzers/scripts.test.ts`** — Unit tests: test with scripts spanning all categories, test script category inference, test with no scripts field, test boolean flags. | Status: not_done
+- [x] **Implement `src/analyzers/scripts.ts`** — Create the script analyzer that reads `package.json` `scripts` field and categorizes each script by name pattern: `build`/`compile`/`bundle`/`tsc` -> `'build'`, `test`/`test:*`/`spec`/`e2e`/`coverage` -> `'test'`, `lint`/`lint:*`/`check`/`format`/`prettier` -> `'lint'`, `start`/`dev`/`serve`/`develop` -> `'start'`, `deploy`/`release`/`publish` -> `'deploy'`, everything else -> `'other'`. Set boolean flags `hasBuild`, `hasTest`, `hasLint`, `hasStart`. | Status: done
+- [x] **Implement script analyzer fallback** — When `package.json` has no `scripts` field, return empty array and all boolean flags as `false`. | Status: done
+- [x] **Write `src/__tests__/analyzers/scripts.test.ts`** — Unit tests: test with scripts spanning all categories, test script category inference, test with no scripts field, test boolean flags. | Status: done
 
 ### Core `analyze()` Function
 
