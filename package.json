@@ -1,6 +1,6 @@
 {
   "name": "codebase-ctx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate AI-optimized codebase summaries via static analysis",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

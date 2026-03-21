@@ -9,3 +9,4 @@ export type {
 } from './types';
 export { fileExists, readFileContent, readLines, readJsonFile } from './utils/file';
 export { estimateTokens } from './utils/token-estimate';
+export { analyzeProject } from './analyzers/project';
