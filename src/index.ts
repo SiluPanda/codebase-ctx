@@ -10,3 +10,5 @@ export type {
 export { fileExists, readFileContent, readLines, readJsonFile } from './utils/file';
 export { estimateTokens } from './utils/token-estimate';
 export { analyzeProject } from './analyzers/project';
+export { analyzeDependencies } from './analyzers/dependencies';
+export { DEPENDENCY_REGISTRY, categorize } from './registries/dependencies';
