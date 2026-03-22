@@ -93,12 +93,20 @@ function detectRuntime(pkg: PackageJson): string {
   };
 
   const browserFrameworks = ['react', 'vue', 'angular', '@angular/core', 'svelte'];
-  const ssrFrameworks = ['next', 'nuxt', 'sveltekit', '@sveltejs/kit'];
+  const serverFrameworks = [
+    // SSR frameworks
+    'next', 'nuxt', 'sveltekit', '@sveltejs/kit',
+    'remix', '@remix-run/node', '@remix-run/react',
+    'astro', 'gatsby',
+    // Backend frameworks (project with react + express is full-stack, not browser-only)
+    'express', 'fastify', 'koa', 'hono',
+    'nest', '@nestjs/core', '@nestjs/common',
+  ];
 
   const hasBrowserFramework = browserFrameworks.some((f) => f in allDeps);
-  const hasSSRFramework = ssrFrameworks.some((f) => f in allDeps);
+  const hasServerFramework = serverFrameworks.some((f) => f in allDeps);
 
-  if (hasBrowserFramework && !hasSSRFramework) {
+  if (hasBrowserFramework && !hasServerFramework) {
     return 'Browser';
   }
 

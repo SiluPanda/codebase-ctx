@@ -184,6 +184,71 @@ describe('analyzeProject', () => {
       const result = analyzeProject(tempDir);
       expect(result.runtime).toBe('Node.js');
     });
+
+    it('returns Node.js when react and remix are both present', () => {
+      writeFileSync(
+        join(tempDir, 'package.json'),
+        JSON.stringify({
+          name: 'test',
+          dependencies: { react: '^18.0.0', '@remix-run/node': '^2.0.0' },
+        }),
+      );
+
+      const result = analyzeProject(tempDir);
+      expect(result.runtime).toBe('Node.js');
+    });
+
+    it('returns Node.js when react and express are both present (full-stack)', () => {
+      writeFileSync(
+        join(tempDir, 'package.json'),
+        JSON.stringify({
+          name: 'test',
+          dependencies: { react: '^18.0.0', express: '^4.0.0' },
+        }),
+      );
+
+      const result = analyzeProject(tempDir);
+      expect(result.runtime).toBe('Node.js');
+    });
+
+    it('returns Node.js when react and astro are both present', () => {
+      writeFileSync(
+        join(tempDir, 'package.json'),
+        JSON.stringify({
+          name: 'test',
+          dependencies: { react: '^18.0.0', astro: '^4.0.0' },
+        }),
+      );
+
+      const result = analyzeProject(tempDir);
+      expect(result.runtime).toBe('Node.js');
+    });
+
+    it('returns Node.js when react and gatsby are both present', () => {
+      writeFileSync(
+        join(tempDir, 'package.json'),
+        JSON.stringify({
+          name: 'test',
+          dependencies: { react: '^18.0.0', gatsby: '^5.0.0' },
+        }),
+      );
+
+      const result = analyzeProject(tempDir);
+      expect(result.runtime).toBe('Node.js');
+    });
+
+    it('returns Node.js when vue and fastify are both present', () => {
+      writeFileSync(
+        join(tempDir, 'package.json'),
+        JSON.stringify({
+          name: 'test',
+          dependencies: { vue: '^3.0.0', fastify: '^4.0.0' },
+        }),
+      );
+
+      const result = analyzeProject(tempDir);
+      expect(result.runtime).toBe('Node.js');
+    });
   });
 
   describe('repository extraction', () => {
