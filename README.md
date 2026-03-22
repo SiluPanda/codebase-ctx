@@ -3,6 +3,7 @@
 Generate AI-optimized codebase summaries via static analysis.
 
 [![npm version](https://img.shields.io/npm/v/codebase-ctx)](https://www.npmjs.com/package/codebase-ctx)
+[![npm downloads](https://img.shields.io/npm/dt/codebase-ctx.svg)](https://www.npmjs.com/package/codebase-ctx)
 [![license](https://img.shields.io/npm/l/codebase-ctx)](https://github.com/SiluPanda/codebase-ctx/blob/master/LICENSE)
 [![node](https://img.shields.io/node/v/codebase-ctx)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
